@@ -152,7 +152,7 @@ li {
 
 <div class="container" id="top">
 
-    <div class="header">
+ <div class="header">
         <h1>AMORI CHAKRABARTI</h1>
         <div class="accent"></div>
         <p>
@@ -162,7 +162,7 @@ li {
         </p>
     </div>
 
-    <div class="section">
+  <div class="section">
         <h2>ABOUT</h2>
         <div class="accent"></div>
         <p>
@@ -171,35 +171,31 @@ li {
         <p class="note">Currently navigating form, texture, and thought.</p>
     </div>
 
-    <div class="grid">
+ <div class="grid">
 
-        <div class="section">
+ <div class="section">
             <h2>EDUCATION</h2>
             <div class="accent"></div>
-
-            <div class="item">
+        <div class="item">
                 Bachelor of Architecture
                 <span>GITAM School of Architecture | 2025–2030</span>
             </div>
 
-            <div class="item">
+ <div class="item">
                 IIMB BBA DBE
                 <span>Indian Institute of Management Bangalore | 2025–2028</span>
             </div>
-
-            <div class="item">
+     <div class="item">
                 Senior Secondary (CBSE)
                 <span>Pollocks Intelli School | 2024–2025</span>
             </div>
-
-            <div class="item">
+    <div class="item">
                 Secondary School (CBSE)
                 <span>Silver Oaks Educational Society</span>
             </div>
+   </div>
 
-        </div>
-
-        <div class="section">
+   <div class="section">
             <h2>SKILLS</h2>
             <div class="accent"></div>
             <ul>
@@ -209,31 +205,29 @@ li {
                 <li>English, Hindi, Bengali</li>
             </ul>
         </div>
-
-    </div>
-
-    <div class="section">
+  </div>
+ <div class="section">
         <h2>EXPERIENCE</h2>
         <div class="accent"></div>
 
-        <div class="item">
+   <div class="item">
             IIA AI Expo 2025
             <span>Volunteer | Visakhapatnam</span>
         </div>
 
-        <div class="item">
+  <div class="item">
             IIA Workshop 2025
             <span>Participant</span>
         </div>
 
-        <div class="item">
+   <div class="item">
             Case Conference on Sustainability
             <span>IIM Visakhapatnam | 2024</span>
         </div>
 
-    </div>
+  </div>
 
-    <div class="section">
+  <div class="section">
         <h2>MEMBERSHIPS</h2>
         <div class="accent"></div>
         <ul>
@@ -243,21 +237,21 @@ li {
         </ul>
     </div>
 
-    <div class="section">
+ <div class="section">
         <h2>REFERENCES</h2>
         <div class="accent"></div>
 
-        <div class="item">
+ <div class="item">
             Piyush Das
             <span>Associate Professor, GITAM | pdas@gitam.edu</span>
         </div>
 
-        <div class="item">
+ <div class="item">
             Hema Gudla
             <span>Assistant Professor, GITAM | hgudla@gitam.edu</span>
         </div>
 
-    </div>
+ </div>
 
 </div>
 
