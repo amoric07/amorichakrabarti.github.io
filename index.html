@@ -14,7 +14,7 @@
     --black: #0a0a0a;
     --white: #ffffff;
     --blue: #bcdcff;
-    --gray: #777;
+    --gray: #6b6b6b;
 }
 
 * {
@@ -24,95 +24,76 @@
     font-family: 'Oswald', sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     background: var(--white);
     color: var(--black);
 }
 
-/* Container */
-
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 60px auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
     padding: 20px;
 }
 
-/* Header */
+/* Sidebar */
 
-.header {
-    border-bottom: 1px solid var(--black);
-    padding-bottom: 20px;
-    margin-bottom: 40px;
+.sidebar {
+    border-right: 1px solid var(--black);
+    padding-right: 30px;
 }
 
-.header h1 {
-    font-size: 40px;
+.name {
+    font-size: 34px;
     letter-spacing: 3px;
 }
 
-.header p {
+.role {
     font-size: 14px;
     color: var(--gray);
-    margin-top: 10px;
+    margin-top: 8px;
 }
-
-/* Accent line */
 
 .accent {
-    width: 60px;
+    width: 50px;
     height: 3px;
     background: var(--blue);
-    margin-top: 12px;
+    margin: 15px 0 25px;
 }
 
-/* Sections */
-
 .section {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .section h2 {
-    font-size: 20px;
+    font-size: 15px;
     letter-spacing: 2px;
     margin-bottom: 10px;
 }
 
-.section p {
-    font-size: 14px;
-    margin-bottom: 8px;
-}
-
-ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-li {
+.section p, .section li {
     font-size: 14px;
     margin-bottom: 6px;
 }
 
-/* Grid */
-
-.grid {
-    display: flex;
-    gap: 40px;
-    flex-wrap: wrap;
+ul {
+    list-style: none;
 }
 
-.grid div {
-    flex: 1;
-    min-width: 250px;
-}
+/* Content */
 
-/* Items */
+.content .section {
+    margin-bottom: 40px;
+}
 
 .item {
-    margin-bottom: 12px;
+    margin-bottom: 14px;
+}
+
+.item strong {
+    font-weight: 500;
 }
 
 .item span {
@@ -121,14 +102,25 @@ li {
     color: var(--gray);
 }
 
-/* Subtle hover detail */
+/* Links */
+
+a {
+    color: var(--black);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--blue);
+}
+
+/* Hover detail */
 
 .section:hover h2 {
     color: var(--blue);
     transition: 0.3s;
 }
 
-/* Back to top button */
+/* Back to top */
 
 .top-btn {
     position: fixed;
@@ -137,14 +129,26 @@ li {
     background: var(--black);
     color: var(--white);
     padding: 10px 14px;
-    text-decoration: none;
-    font-size: 13px;
-    border-radius: 3px;
+    font-size: 12px;
 }
 
 .top-btn:hover {
     background: var(--blue);
     color: var(--black);
+}
+
+/* Responsive */
+
+@media (max-width: 800px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--black);
+        padding-bottom: 20px;
+    }
 }
 
 </style>
@@ -154,39 +158,111 @@ li {
 
 <div class="container">
 
-    <div class="header">
-        <h1>AMORI CHAKRABARTI</h1>
-        <p>Architecture Student</p>
-        <div class="accent"></div>
-    </div>
+    <!-- LEFT SIDE -->
+    <div class="sidebar">
 
-    <div class="section">
-        <h2>EDUCATION</h2>
+        <div class="name">AMORI CHAKRABARTI</div>
+        <div class="role">Architecture Student</div>
         <div class="accent"></div>
-        <div class="item">
-            IIMB BBA DBE
-            <span>2025 – 2028</span>
+
+        <div class="section">
+            <h2>CONTACT</h2>
+            <p>achakra1@student.gitam.edu</p>
+            <p>+91 9433069800</p>
+            <p>Visakhapatnam, India</p>
         </div>
+
+        <div class="section">
+            <h2>SKILLS</h2>
+            <ul>
+                <li>Basic Drafting & Model Making</li>
+                <li>Freehand Sketching</li>
+                <li>English, Hindi, Bengali</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>MEMBERSHIPS</h2>
+            <ul>
+                <li>Indian Institute of Architects</li>
+                <li>National Association of Students of Architecture</li>
+                <li>Indian National Trust for Art and Cultural Heritage (INTACH)</li>
+            </ul>
+        </div>
+
     </div>
 
-    <div class="section">
-        <h2>SKILLS</h2>
-        <div class="accent"></div>
-        <ul>
-            <li>Design Thinking</li>
-            <li>Spatial Planning</li>
-            <li>Visual Composition</li>
-        </ul>
-    </div>
+    <!-- RIGHT SIDE -->
+    <div class="content">
 
-    <div class="section">
-        <h2>INTERESTS</h2>
-        <div class="accent"></div>
-        <ul>
-            <li>Architecture & Built Form</li>
-            <li>Material Exploration</li>
-            <li>Minimal Design Systems</li>
-        </ul>
+        <div class="section">
+            <h2>PROFILE</h2>
+            <div class="accent"></div>
+
+            <p>
+                First-year architecture student exploring the relationship between material,
+                perception, and spatial experience. Interested in how minimal design systems
+                and tactile qualities influence the way spaces are understood and felt.
+                Currently developing skills in drafting, sketching, and model making through
+                academic and exploratory work.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>EDUCATION</h2>
+            <div class="accent"></div>
+
+            <div class="item">
+                <strong>Bachelor of Architecture</strong>
+                <span>2025 – 2030</span>
+                <span>GITAM School of Architecture</span>
+            </div>
+
+            <div class="item">
+                <strong>IIMB BBA DBE</strong>
+                <span>2025 – 2028</span>
+            </div>
+
+            <div class="item">
+                <strong>Senior Secondary (CBSE)</strong>
+                <span>2023 – 2025</span>
+                <span>Pollocks Intelli School</span>
+            </div>
+
+            <div class="item">
+                <strong>Secondary School (CBSE)</strong>
+                <span>Silver Oaks Educational Society</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>EXPERIENCE</h2>
+            <div class="accent"></div>
+
+            <ul>
+                <li>Volunteered for IIA AI Expo 2025, Visakhapatnam</li>
+                <li>Participated in IIA Workshop 2025, Visakhapatnam</li>
+                <li>Attended Case Conference on Responsible Innovations and Sustainability Practices 2024, IIM Visakhapatnam</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>REFERENCES</h2>
+            <div class="accent"></div>
+
+            <div class="item">
+                <strong>Piyush Das</strong>
+                <span>Associate Professor, GITAM School of Architecture</span>
+                <span>pdas@gitam.edu</span>
+            </div>
+
+            <div class="item">
+                <strong>Hema Gudla</strong>
+                <span>Assistant Professor, GITAM School of Architecture</span>
+                <span>hgudla@gitam.edu</span>
+            </div>
+        </div>
+
     </div>
 
 </div>
