@@ -1,270 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amori Chakrabarti | Architecture Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Oswald:wght@300;500;700&display=swap" rel="stylesheet">
 
-<title>Amori Chakrabarti | Resume</title>
+    <style>
+        :root {
+            --primary: #0a0a0a;
+            --accent: #3498db; 
+            --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            --glass: rgba(255, 255, 255, 0.95);
+            --text-gray: #555;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
 
-<style>
+        html { scroll-behavior: smooth; }
 
-:root {
-    --black: #0a0a0a;
-    --white: #ffffff;
-    --blue: #bcdcff;
-    --gray: #6b6b6b;
-}
+        body {
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            color: var(--primary);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Oswald', sans-serif;
-}
+        /* --- Navigation --- */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            text-align: center;
+        }
 
-body {
-    background: var(--white);
-    color: var(--black);
-}
+        nav a {
+            text-decoration: none;
+            color: var(--primary);
+            font-family: 'Oswald', sans-serif;
+            margin: 0 15px;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
 
-.container {
-    max-width: 1000px;
-    margin: 60px auto;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 60px;
-    padding: 20px;
-}
+        nav a:hover { color: var(--accent); }
 
-/* Sidebar */
+        /* --- Layout --- */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: var(--glass);
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+            border-radius: 8px;
+            overflow: hidden;
+        }
 
-.sidebar {
-    border-right: 1px solid var(--black);
-    padding-right: 30px;
-}
+        /* --- Sidebar --- */
+        .sidebar {
+            background: #fcfcfc;
+            padding: 60px 40px;
+            border-right: 1px solid #eee;
+        }
 
-.name {
-    font-size: 34px;
-    letter-spacing: 3px;
-}
+        .name {
+            font-family: 'Oswald', sans-serif;
+            font-size: 38px;
+            line-height: 1.1;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
 
-.role {
-    font-size: 14px;
-    color: var(--gray);
-    margin-top: 8px;
-}
+        .role {
+            font-family: 'Oswald', sans-serif;
+            font-size: 14px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 10px;
+        }
 
-.accent {
-    width: 50px;
-    height: 3px;
-    background: var(--blue);
-    margin: 15px 0 25px;
-}
+        .accent-line {
+            width: 40px;
+            height: 4px;
+            background: var(--primary);
+            margin: 30px 0;
+        }
 
-.section {
-    margin-bottom: 30px;
-}
+        /* --- Main Content --- */
+        .content { padding: 60px; }
 
-.section h2 {
-    font-size: 15px;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-}
+        h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 18px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
 
-.section p, .section li {
-    font-size: 14px;
-    margin-bottom: 6px;
-}
+        h2::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #eee;
+            margin-left: 20px;
+        }
 
-ul {
-    list-style: none;
-}
+        .section { margin-bottom: 60px; }
 
-/* Content */
+        /* --- Gallery Grid --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
 
-.content .section {
-    margin-bottom: 40px;
-}
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 4px;
+            height: 200px;
+            background: #eee;
+            position: relative;
+        }
 
-.item {
-    margin-bottom: 14px;
-}
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+        }
 
-.item strong {
-    font-weight: 500;
-}
+        .gallery-item:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
 
-.item span {
-    display: block;
-    font-size: 13px;
-    color: var(--gray);
-}
+        .gallery-item .caption {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            width: 100%;
+            padding: 5px 10px;
+            font-size: 11px;
+            font-family: 'Oswald';
+            opacity: 0;
+        }
 
-/* Links */
+        .gallery-item:hover .caption { opacity: 1; }
 
-a {
-    color: var(--black);
-    text-decoration: none;
-}
+        /* --- Items & Lists --- */
+        .item {
+            padding: 15px;
+            margin-bottom: 10px;
+            border-left: 3px solid transparent;
+        }
 
-a:hover {
-    color: var(--blue);
-}
+        .item:hover {
+            background: #f9f9f9;
+            border-left: 3px solid var(--accent);
+            padding-left: 20px;
+        }
 
-/* Hover detail */
+        .item strong { font-family: 'Oswald', sans-serif; font-size: 17px; }
+        .item span { display: block; font-size: 13px; color: var(--text-gray); }
 
-.section:hover h2 {
-    color: var(--blue);
-    transition: 0.3s;
-}
+        ul { list-style: none; }
+        ul li { 
+            margin-bottom: 12px; 
+            padding-left: 20px; 
+            position: relative; 
+            font-size: 15px;
+        }
+        ul li::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
+            position: absolute;
+            left: 0;
+            top: 10px;
+        }
 
-/* Back to top */
+        /* --- Top Button --- */
+        .top-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 10px;
+            font-family: 'Oswald';
+            z-index: 1001;
+        }
 
-.top-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: var(--black);
-    color: var(--white);
-    padding: 10px 14px;
-    font-size: 12px;
-}
+        .top-btn:hover { background: var(--accent); }
 
-.top-btn:hover {
-    background: var(--blue);
-    color: var(--black);
-}
-
-/* Responsive */
-
-@media (max-width: 800px) {
-    .container {
-        grid-template-columns: 1fr;
-    }
-
-    .sidebar {
-        border-right: none;
-        border-bottom: 1px solid var(--black);
-        padding-bottom: 20px;
-    }
-}
-
-</style>
+        /* Responsive */
+        @media (max-width: 900px) {
+            .container { grid-template-columns: 1fr; margin: 0; border-radius: 0; }
+            .sidebar { border-right: none; padding: 40px; }
+            .content { padding: 40px 20px; }
+        }
+    </style>
 </head>
 
 <body>
 
+<nav>
+    <a href="#profile">Profile</a>
+    <a href="#gallery">Work</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+</nav>
+
 <div class="container">
 
-    <!-- LEFT SIDE -->
-    <div class="sidebar">
-
-        <div class="name">AMORI CHAKRABARTI</div>
+    <aside class="sidebar">
+        <div class="name">AMORI<br>CHAKRABARTI</div>
         <div class="role">Architecture Student</div>
-        <div class="accent"></div>
+        <div class="accent-line"></div>
 
         <div class="section">
             <h2>CONTACT</h2>
-            <p>achakra1@student.gitam.edu</p>
-            <p>+91 9433069800</p>
-            <p>Visakhapatnam, India</p>
+            <p style="font-size: 14px;">achakra1@student.gitam.edu</p>
+            <p style="font-size: 14px;">+91 9433069800</p>
+            <p style="font-size: 14px;">Visakhapatnam, India</p>
         </div>
 
         <div class="section">
             <h2>SKILLS</h2>
             <ul>
-                <li>Basic Drafting & Model Making</li>
+                <li>Drafting & Model Making</li>
                 <li>Freehand Sketching</li>
                 <li>English, Hindi, Bengali</li>
             </ul>
         </div>
+    </aside>
 
-        <div class="section">
-            <h2>MEMBERSHIPS</h2>
-            <ul>
-                <li>Indian Institute of Architects</li>
-                <li>National Association of Students of Architecture</li>
-                <li>Indian National Trust for Art and Cultural Heritage (INTACH)</li>
-            </ul>
-        </div>
+    <main class="content">
 
-    </div>
-
-    <!-- RIGHT SIDE -->
-    <div class="content">
-
-        <div class="section">
+        <div id="profile" class="section">
             <h2>PROFILE</h2>
-            <div class="accent"></div>
-
             <p>
                 First-year architecture student exploring the relationship between material,
                 perception, and spatial experience. Interested in how minimal design systems
                 and tactile qualities influence the way spaces are understood and felt.
-                Currently developing skills in drafting, sketching, and model making through
-                academic and exploratory work.
             </p>
         </div>
 
-        <div class="section">
-            <h2>EDUCATION</h2>
-            <div class="accent"></div>
+        <div id="gallery" class="section">
+            <h2>DRAFTS & SKETCHES</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="IMG_3040.jpeg" alt="Image 1">
+                    <div class="caption">Sketch</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMB_3421.jpeg" alt="Image 2">
+                    <div class="caption">Geometric Form Study</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG_3695.jpeg" alt="Image 3">
+                    <div class="caption">Floor Painting</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG_3696.jpeg" alt="Image 4">
+                    <div class="caption">Sketch</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG_3730.jpeg" alt="Image 5">
+                    <div class="caption">Pathway of light</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG_3735.jpeg" alt="Image 6">
+                    <div class="caption">Gestalt Light Model</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG_3752.jpeg" alt="Image 7">
+                    <div class="caption">Gestalt Light Model</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG_3755.jpeg" alt="Image 8">
+                    <div class="caption">Gestalt Light Model</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG_3761.jpeg" alt="Image 9">
+                    <div class="caption">The Tower of Babel</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG_4211.jpeg" alt="Image 10">
+                    <div class="caption">Abstract representation of Konark</div>
+                </div>
+            </div>
+        </div>
 
+        <div id="education" class="section">
+            <h2>EDUCATION</h2>
             <div class="item">
                 <strong>Bachelor of Architecture</strong>
-                <span>2025 – 2030</span>
-                <span>GITAM School of Architecture</span>
+                <span>2025 – 2030 | GITAM School of Architecture</span>
             </div>
-
             <div class="item">
                 <strong>IIMB BBA DBE</strong>
                 <span>2025 – 2028</span>
             </div>
-
             <div class="item">
                 <strong>Senior Secondary (CBSE)</strong>
-                <span>2023 – 2025</span>
-                <span>Pollocks Intelli School</span>
-            </div>
-
-            <div class="item">
-                <strong>Secondary School (CBSE)</strong>
-                <span>Silver Oaks Educational Society</span>
+                <span>2023 – 2025 | Pollocks Intelli School</span>
             </div>
         </div>
 
-        <div class="section">
+        <div id="experience" class="section">
             <h2>EXPERIENCE</h2>
-            <div class="accent"></div>
-
             <ul>
                 <li>Volunteered for IIA AI Expo 2025, Visakhapatnam</li>
                 <li>Participated in IIA Workshop 2025, Visakhapatnam</li>
-                <li>Attended Case Conference on Responsible Innovations and Sustainability Practices 2024, IIM Visakhapatnam</li>
+                <li>Attended CASE Conference 2024, IIM Visakhapatnam</li>
             </ul>
         </div>
 
-        <div class="section">
-            <h2>REFERENCES</h2>
-            <div class="accent"></div>
-
-            <div class="item">
-                <strong>Piyush Das</strong>
-                <span>Associate Professor, GITAM School of Architecture</span>
-                <span>pdas@gitam.edu</span>
-            </div>
-
-            <div class="item">
-                <strong>Hema Gudla</strong>
-                <span>Assistant Professor, GITAM School of Architecture</span>
-                <span>hgudla@gitam.edu</span>
-            </div>
-        </div>
-
-    </div>
-
+    </main>
 </div>
 
 <a href="#" class="top-btn">TOP</a>
